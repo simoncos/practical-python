@@ -1,4 +1,5 @@
 from os.path import dirname, abspath
+import os
 
 print('test results:')
 print(__file__)
@@ -6,8 +7,4 @@ print(dirname(__file__))
 print(abspath(__file__))
 print(dirname(abspath(__file__)))
 print(dirname(dirname(abspath(__file__))))
-print('---')
-print('方法2:')
-print(dirname(dirname(abspath(__file__))) + '/b.txt') # 方法2
-print('方法3:')
-print(dirname(abspath(__file__)) + '/../b.txt') # 方法3
+print('current working directory:', os.getcwd()) # 打印当前工作目录
