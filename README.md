@@ -1,4 +1,4 @@
-# python-practice
+# Practical Python
 
 
 - Corresponding articles (Chinese):
