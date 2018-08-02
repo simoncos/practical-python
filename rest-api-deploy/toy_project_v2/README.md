@@ -39,3 +39,9 @@ toy_project_v2/
             └── timer.py
 
 ```
+
+### TODO
+
+- Path
+- Config files
+- Wrapped Logger
