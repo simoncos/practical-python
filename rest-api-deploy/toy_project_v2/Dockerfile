@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 ADD docker/toy_supervisor.conf  /etc/supervisor/conf.d/
 
 # port
-EXPOSE 8100
+EXPOSE 5000
 
 CMD ["supervisord", "-n"]
 
