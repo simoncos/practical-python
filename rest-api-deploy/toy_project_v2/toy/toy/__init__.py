@@ -14,8 +14,29 @@ from toy.utils.timer import Timer
 
 app = Flask(__name__) # create a Flask instance
 
+@app.route('/')
+def index():
+    return "Hello, World!"
+
+@app.route('/cut/para/<string:content>') # syntax warning: must not have space beside ":"
+def paraCut(content):
+    word_str, word_num = cut(content)
+    return "words: {}; number of words: {}".format(word_str, word_num)
+
+# json post test
+@app.route('/test/post')
+def postTest():
+    # format a request
+    url = 'http://localhost:5000/cut/json'
+    data = {'content': "我们中出了一个叛徒"}
+    headers = {'Content-Type' : 'application/json'}
+
+    r = requests.post(url, data=json.dumps(data), headers=headers)
+    return r.text
+
 @app.route('/cut/json', methods=['POST'])
 def jsonCut():
+
     log = LoggerFactory.getDebugLogger()
 
     status = None
@@ -66,26 +87,6 @@ def jsonCut():
         response = Response(js, status=status, mimetype='application/json')
         log.info("docid:{}, Processing finished, result is: {}".format(docid, output))
         return response
-
-@app.route('/')
-def index():
-    return "Hello, World!"
-
-@app.route('/cut/para/<string:content>') # syntax warning: must not have space beside ":"
-def paraCut(content):
-    word_str, word_num = cut(content)
-    return "words: {}; number of words: {}".format(word_str, word_num)
-
-# json post test
-@app.route('/test/post')
-def postTest():
-    # format a request
-    url = 'http://localhost:5000/cut/json'
-    data = {'content': "我们中出了一个叛徒"}
-    headers = {'Content-Type' : 'application/json'}
-
-    r = requests.post(url, data=json.dumps(data), headers=headers)
-    return r.text
 
 if __name__ == '__main__':
     app.run(debug=True)

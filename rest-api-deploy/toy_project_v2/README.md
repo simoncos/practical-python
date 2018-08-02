@@ -42,6 +42,8 @@ toy_project_v2/
 
 ### TODO
 
+- flask-restful
+- flasgger documentation
 - Path
 - Config files
 - Wrapped Logger
