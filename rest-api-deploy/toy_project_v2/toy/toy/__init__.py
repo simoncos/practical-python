@@ -26,6 +26,7 @@ def jsonCut():
     try:
         # get JSON in the request
         json_dict = request.get_json()
+        log.info('Processing starts, input: {}'.format(json_dict))
         # check input
         docid = json_dict['docid']
         content = json_dict['content']
