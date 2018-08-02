@@ -5,4 +5,4 @@ bash kill.sh
 
 # Start Process
 cd ../
-gunicorn -c conf/gunicorn_conf.py toy:syntacticapp # toy/__init__.py | app = Flask(__name__)
+gunicorn -c conf/gunicorn.conf toy:app # toy/__init__.py | app = Flask(__name__)
