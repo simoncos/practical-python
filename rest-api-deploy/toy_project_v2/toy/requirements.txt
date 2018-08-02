@@ -1,0 +1,6 @@
+eventlet==0.20.1
+gunicorn==19.7.0
+jieba==0.38
+Flask==0.12
+requests==2.13.0
+PyYAML

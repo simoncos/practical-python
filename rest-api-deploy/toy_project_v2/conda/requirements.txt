@@ -1,0 +1,10 @@
+name: toyenv
+dependencies:
+ - Python=3.5
+ - Flask=0.12
+ - requests=2.13.0
+ - gcc
+ - pip:
+   - eventlet==0.20.1
+   - gunicorn==19.1.0
+   - jieba==0.38
