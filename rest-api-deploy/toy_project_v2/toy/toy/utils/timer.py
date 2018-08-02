@@ -2,17 +2,14 @@ from datetime import datetime
 
 from toy.utils.logger import LoggerFactory
 
-# def timeit(func):
-#     def timed(*args, **kw):
-#         log = LoggerFactory.getDebugLogger()
-#         with Timer() as t:
-#             result = func(*args, **kw)
-#         if 'docid' in result:
-#             log.info("docid:{}, Processing time for {} is: {}".format(result['docid'], func.__name__, t.elapse))
-#         else:
-#             log.info("Processing time for {} is: {}".format(func.__name__, t.elapse))
-#         return result
-#     return timed
+def timeit(func):
+    def timed(*args, **kw):
+        log = LoggerFactory.getDebugLogger()
+        with Timer() as t:
+            result = func(*args, **kw)
+        log.info("Processing time for {} is: {}".format(func.__name__, t.elapse))
+        return result
+    return timed
 
 class Timer(object):
 
