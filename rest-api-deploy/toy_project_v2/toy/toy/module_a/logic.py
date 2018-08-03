@@ -6,7 +6,7 @@ from toy.utils.timer import Timer
 from toy.utils.exception import *
 from toy.utils.logger import LoggerFactory
 
-def cut(content, docid):
+def cut(content, docid=None):
     log = LoggerFactory.getDebugLogger()
     with Timer() as t:
         word_list = jieba.lcut(content)
