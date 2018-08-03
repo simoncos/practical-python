@@ -47,7 +47,7 @@ def jsonCut():
         # run business logic
         with Timer() as t:
             word_str, word_num = cut(content, docid)
-        log.info("docid:{}, Processing time for cut is: {}".format(docid, t.elapse))
+        log.info("docid:{}, Processing time for cut is: {}".format(docid, t.elapse), extra={'elapse':t.elapse})
 
         # prepare Response info
         output_data = {'word_str': word_str, 'word_num': word_num}
