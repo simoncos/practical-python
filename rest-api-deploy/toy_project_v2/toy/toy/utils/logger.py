@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from pathlib import Path
+import os
 import yaml
 import logging
 import logging.config
 import logging.handlers
 from functools import lru_cache
+
+p = Path(__file__).absolute()
 
 class LoggerFactory(object):
 
@@ -48,7 +52,7 @@ class LoggerFactory(object):
         # Use customized logger
         logging.setLoggerClass(_CustomExtraLogger)
         # Load config
-        conf = open('conf/logging.conf', 'r')
+        conf = open(os.path.join(p.parent.parent.parent, 'conf/logging.conf'), 'r')
         logging.config.dictConfig(yaml.load(conf))
         conf.close()
         # Get logger by name

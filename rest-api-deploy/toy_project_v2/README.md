@@ -42,9 +42,9 @@ toy_project_v2/
 
 ### TODO
 
+- Path / run in __init__.py
 - supervisord
 - flask-restful
 - flasgger documentation
-- Path
 - Config files
 - Wrapped Logger
