@@ -50,7 +50,7 @@ class LoggerFactory(object):
         # Use customized logger
         logging.setLoggerClass(_CustomExtraLogger)
         # Load config
-        conf = open('../conf/logging.conf', 'r')
+        conf = open('conf/logging.conf', 'r')
         logging.config.dictConfig(yaml.load(conf))
         conf.close()
         # Get logger by name
