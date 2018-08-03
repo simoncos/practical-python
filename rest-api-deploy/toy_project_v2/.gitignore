@@ -3,7 +3,6 @@
 *.model
 *.xls
 *.pkl
-*.log*
 
 #experiments
 *.out
