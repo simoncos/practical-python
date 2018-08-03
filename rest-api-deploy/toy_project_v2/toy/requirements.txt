@@ -4,3 +4,4 @@ jieba==0.38
 Flask==0.12
 requests==2.13.0
 PyYAML
+python-logstash==0.4.6

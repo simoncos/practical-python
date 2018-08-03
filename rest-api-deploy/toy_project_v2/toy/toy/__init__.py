@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request, Response
-import requests, json
+import json
 import traceback
 
 from toy.module_a.logic import cut
@@ -46,7 +46,7 @@ def jsonCut():
 
         # run business logic
         with Timer() as t:
-            word_str, word_num = cut(content)
+            word_str, word_num = cut(content, docid)
         log.info("docid:{}, Processing time for cut is: {}".format(docid, t.elapse))
 
         # prepare Response info

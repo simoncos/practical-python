@@ -42,6 +42,7 @@ toy_project_v2/
 
 ### TODO
 
+- supervisord
 - flask-restful
 - flasgger documentation
 - Path
