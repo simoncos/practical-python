@@ -19,9 +19,10 @@ class Model():
 if __name__ == '__main__':
     # Reload only when cache_clear() is called
     model = Model()
-    model.log()
-    time.sleep(2)
-    change_conf_file()
-    Getter.getModel.cache_clear()
-    print('Cache cleared, reloading config...')
-    model.log()
+    while True:
+        model.log()
+        time.sleep(2)
+        change_conf_file() # change data
+        Getter.getModel.cache_clear()
+        print('Cache cleared, reloading config...')
+        model.log()

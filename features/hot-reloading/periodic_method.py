@@ -1,6 +1,5 @@
 import time
 import cachetools
-import yaml
 
 from utils import change_conf_file
 
@@ -10,8 +9,7 @@ ROTATE = 5
 def reload():
     print('Cache cleared, reloading config...')
     with open('config.txt') as f:
-        f.flush()
-        parameters = yaml.load(f)
+        parameters = f.read()
     return parameters
 
 class Model():
@@ -24,5 +22,5 @@ if __name__ == '__main__':
     model = Model()
     while True:
         time.sleep(2)
-        change_conf_file()
+        change_conf_file() # change data
         model.log()
