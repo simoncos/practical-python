@@ -1,7 +1,7 @@
 eventlet==0.20.1
 gunicorn==19.7.0
 jieba==0.38
-Flask==0.12
-requests==2.13.0
+Flask==0.12.3
+requests>=2.20.0
 PyYAML
 python-logstash==0.4.6
