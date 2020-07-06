@@ -35,6 +35,7 @@ def test_retry_func():
 
 # Decorator Method
 
+# TODO: multi-threading
 def retry(func, times=0):
     def retried(*args, **kwargs):
         nonlocal times # closure
