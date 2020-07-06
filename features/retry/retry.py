@@ -37,10 +37,12 @@ def test_retry_func():
 
 def retry(func, times=0):
     def retried(*args, **kwargs):
-        nonlocal times
+        nonlocal times # closure
         time.sleep(1)
         try:
-            return func()
+            result = func()
+            times = 0 # reset after success
+            return result
         except Exception as e:
             if times >= MAXIMAL_RETRY:
                 print(f'>> Exceed maximal retry {MAXIMAL_RETRY}, Raise exception...')
@@ -48,7 +50,7 @@ def retry(func, times=0):
             else:
                 times += 1
                 print(f'>> Exception, Retry {times} begins...')
-                return run_with_retry(*args, **kwargs)
+                return retried(*args, **kwargs)
     return retried
 
 @retry
