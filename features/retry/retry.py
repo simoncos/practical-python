@@ -52,7 +52,7 @@ def retry(func, times=0):
     return retried
 
 @retry
-def run_decorated():
+def run_to_be_decorated():
     result = random.random() # generate random double from 0 to 1
     if result > 0.3:
         raise Exception(f'Wrong result: {result}')
@@ -64,11 +64,11 @@ def test_retry_decorator():
     while True:
         print('\nBegin new run...')
         time.sleep(1)
-        result = run_decorated()
+        result = run_to_be_decorated()
         if result:
             print(f'Get result: {result}')
 
 if __name__ == "__main__":
-    test_retry_func()
-    # test_retry_decorator()
+    # test_retry_func()
+    test_retry_decorator()
     
