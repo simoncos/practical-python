@@ -40,7 +40,7 @@ def retry(func, times=0):
         nonlocal times # closure
         time.sleep(1)
         try:
-            result = func()
+            result = func(*args, **kwargs)
             times = 0 # reset after success
             return result
         except Exception as e:
