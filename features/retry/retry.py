@@ -1,4 +1,3 @@
-import sys, os
 import time, random
 
 MAXIMAL_RETRY = 3
