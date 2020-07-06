@@ -41,7 +41,7 @@ def retry(func, times=0):
         nonlocal times
         time.sleep(1)
         try:
-            return run()
+            return func()
         except Exception as e:
             if times >= MAXIMAL_RETRY:
                 print(f'>> Exceed maximal retry {MAXIMAL_RETRY}, Raise exception...')
@@ -49,7 +49,7 @@ def retry(func, times=0):
             else:
                 times += 1
                 print(f'>> Exception, Retry {times} begins...')
-                return run_with_retry(times)
+                return run_with_retry(*args, **kwargs)
     return retried
 
 @retry
